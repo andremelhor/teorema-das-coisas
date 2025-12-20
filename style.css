@@ -1,0 +1,295 @@
+/* ==========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================== */
+:root {
+    --bg-color: #f8fafc;
+    --brand-blue: #0f172a;    
+    --accent-blue: #3b82f6;
+    --accent-red: #ff0033;   
+    --text-color: #1e293b;
+    --text-gray: #cbd5e1;
+    --color-bio: #22c55e;
+    --color-chem: #a855f7;
+    --color-phys: #3b82f6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background-color: var(--bg-color); 
+    font-family: 'Inter', sans-serif; 
+    color: var(--text-color); 
+    line-height: 1.6; 
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; transition: 0.3s; }
+
+/* ==========================================================
+   2. CABEÇALHO (HEADER)
+   ========================================================== */
+header {
+    background-color: var(--brand-blue);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+}
+
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    color: white; 
+    font-family: 'Outfit'; 
+    font-weight: 700; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 1.2rem;
+}
+
+.logo-img { height: 35px; }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   3. REGRAS PARA COMPUTADOR (Telas Grandes)
+   ========================================================== */
+@media (min-width: 769px) {
+    nav ul li { position: relative; }
+
+    nav ul { display: flex; list-style: none; gap: 20px; }
+    nav ul li a { color: var(--text-gray); font-size: 0.85rem; font-weight: 500; padding: 10px 0; }
+    nav ul li a:hover { color: white; }
+
+    .dropdown-menu, .submenu {
+        display: none;
+        position: absolute;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 5px 0;
+        border-top: 3px solid var(--accent-blue);
+    }
+
+    .dropdown-menu { 
+        top: 100%; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        margin-top: 5px;
+    }
+
+    .submenu { 
+        top: 0; 
+        left: 98%; 
+    }
+
+    .dropdown:hover > .dropdown-menu, 
+    .has-submenu:hover > .submenu { 
+        display: block !important; 
+    }
+
+    .dropdown-menu li a { 
+        color: var(--text-color) !important; 
+        padding: 10px 20px; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .dropdown-menu li a:hover { 
+        background: #f1f5f9; 
+        color: var(--accent-blue) !important; 
+    }
+}
+
+/* ==========================================================
+   4. REGRAS PARA CELULAR (F12)
+   ========================================================== */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .desktop-only { display: none; }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--brand-blue);
+        padding: 20px;
+        border-top: 1px solid #1e293b;
+    }
+
+    nav.active { display: block !important; }
+
+    nav ul { flex-direction: column; list-style: none; gap: 15px; }
+    nav ul li a { color: white !important; font-size: 1.1rem; display: block; padding: 10px 0; }
+
+    .dropdown-menu, .submenu {
+        position: static;
+        display: none;
+        background: rgba(255,255,255,0.05);
+        padding-left: 20px;
+        box-shadow: none;
+        border: none;
+    }
+
+    .dropdown:hover > .dropdown-menu,
+    .has-submenu:hover > .submenu { display: block; }
+}
+
+/* ==========================================================
+   5. CONTEÚDO (HERO E CARDS)
+   ========================================================== */
+.hero { padding: 160px 0 60px; text-align: center; }
+h1 { font-family: 'Outfit'; font-size: 3.2rem; margin-top: 20px; color: var(--brand-blue); line-height: 1.2; }
+
+.gradient-text { 
+    background: linear-gradient(90deg, var(--color-bio), var(--color-chem), var(--color-phys)); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+
+.card { 
+    background: white; 
+    padding: 35px; 
+    border-radius: 24px; 
+    border: 1px solid #e2e8f0; 
+    transition: 0.3s; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px;
+    border-top: 6px solid var(--accent-blue);
+}
+
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px rgba(0,0,0,0.1); }
+.card-bio { border-top-color: var(--color-bio); }
+.card-chem { border-top-color: var(--color-chem); }
+.card-phys { border-top-color: var(--color-phys); }
+
+.icon-img-box { width: 60px; height: 60px; border-radius: 15px; display: flex; align-items: center; justify-content: center; }
+.card-bio .icon-img-box { background: #dcfce7; }
+.card-chem .icon-img-box { background: #f3e8ff; }
+.card-phys .icon-img-box { background: #e0f2fe; }
+.icon-img-box img { width: 35px; }
+
+.tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.tags span { padding: 6px 14px; border-radius: 10px; font-size: 0.8rem; font-weight: 600; }
+.card-bio .tags span { background: #dcfce7; color: #166534; }
+.card-chem .tags span { background: #f3e8ff; color: #6b21a8; }
+.card-phys .tags span { background: #e0f2fe; color: #1e40af; }
+
+.link-arrow { font-weight: 700; color: var(--accent-blue); display: flex; align-items: center; gap: 8px; margin-top: auto; }
+.btn-primary { background: var(--accent-red); color: white; padding: 10px 22px; border-radius: 8px; font-weight: 600; }
+
+/* ==========================================================
+   6. SISTEMA DE CORES PARA CARDS DE MÓDULOS
+   Aqui mudamos APENAS a borda superior e a cor da seta
+   ========================================================== */
+
+/* Card Verde (Ex: Citologia) */
+.card-verde {  border-top: 6px solid #22c55e !important; }
+.card-verde .link-arrow {     color: #22c55e !important; }
+/* Card Roxo (Ex: Bioquímica) */
+.card-roxo {      border-top: 6px solid #a855f7 !important; }
+.card-roxo .link-arrow {     color: #a855f7 !important; }
+/* Card Laranja (Ex: Genética) */
+.card-laranja {     border-top: 6px solid #f97316 !important; }
+.card-laranja .link-arrow {     color: #f97316 !important; }
+/* Card Amarelo */.card-amarelo {     border-top: 6px solid #eab308 !important; }
+.card-amarelo .link-arrow {     color: #eab308 !important; }
+/* Card Rosa */.card-rosa {     border-top: 6px solid #ec4899 !important; }
+.card-rosa .link-arrow {     color: #ec4899 !important; }
+
+/* ==========================================================
+   6. SISTEMA DE CORES PARA CARDS DE MÓDULOS
+   ========================================================== */
+
+/* Card Verde (Ex: Citologia) */
+
+.card-verde .link-arrow, .card-verde .link-arrow i { 
+    color: #22c55e !important; 
+}
+
+/* Card Roxo (Ex: Bioquímica) */
+.card-roxo { 
+    border-top: 6px solid #a855f7 !important; 
+}
+.card-roxo .link-arrow, .card-roxo .link-arrow i { 
+    color: #a855f7 !important; 
+}
+
+/* Card Laranja (Ex: Genética) */
+.card-laranja { 
+    border-top: 6px solid #f97316 !important; 
+}
+.card-laranja .link-arrow, .card-laranja .link-arrow i { 
+    color: #f97316 !important; 
+}
+
+/* Card Amarelo */
+.card-amarelo { 
+    border-top: 6px solid #eab308 !important; 
+}
+.card-amarelo .link-arrow, .card-amarelo .link-arrow i { 
+    color: #eab308 !important; 
+}
+
+/* Card Rosa */
+.card-rosa { 
+    border-top: 6px solid #ec4899 !important; 
+}
+.card-rosa .link-arrow, .card-rosa .link-arrow i { 
+    color: #ec4899 !important; 
+}
+
+
+/* ==========================================================
+   PÁGINA DE VIDEOAULA (ESTILO PLAYLIST)
+   ========================================================== */
+.container-aula { margin-top: 100px; padding: 20px; max-width: 1400px; margin-inline: auto; }
+
+.aula-layout { display: flex; gap: 20px; }
+
+.video-main { flex: 3; } /* O vídeo ocupa 3 partes */
+.playlist { flex: 1; background: #1e293b; border-radius: 12px; height: fit-content; color: white; }
+
+/* Responsivo para celular */
+@media (max-width: 992px) {
+    .aula-layout { flex-direction: column; }
+}
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background: #000; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.aula-header { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; gap: 15px; }
+.aula-desc { color: #64748b; margin-top: 10px; }
+
+/* Botão Concluir */
+.btn-concluir { background: none; border: 2px solid var(--color-bio); color: var(--color-bio); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+.btn-concluir.concluida { background: var(--color-bio); color: white; }
+
+/* Playlist Itens */
+.playlist-header { padding: 20px; border-bottom: 1px solid #334155; }
+.playlist-itens { max-height: 500px; overflow-y: auto; }
+.item-aula { display: flex; align-items: center; gap: 15px; padding: 15px 20px; color: #cbd5e1; border-bottom: 1px solid #334155; transition: 0.3s; }
+.item-aula:hover { background: #334155; }
+.item-aula.ativa { background: #0f172a; border-left: 4px solid var(--color-bio); color: white; }
+.item-aula .num { background: #334155; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
