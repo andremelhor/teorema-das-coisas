@@ -154,7 +154,7 @@ header {
 }
 
 /* ==========================================================
-   5. CONTEÚDO   (HERO E CARDS)
+   5. CONTEÚDO   (HERO E CARDS) 
    ========================================================== */
 .hero { padding: 90px 0 60px; text-align: center; }
 h1 { font-family: 'Outfit'; font-size: 3.2rem; margin-top: 20px; color: var(--brand-blue); line-height: 1.2; }
