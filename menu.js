@@ -7,7 +7,7 @@ const menuHTML = `
 
 <div class="container nav-container">
         <div class="logo">
-            <img src=" https://github.com/andremelhor/teorema-das-coisas/blob/main/Imagens%2Flogo-teorema-das-coisas.png " alt="Logo" class="logo-img"> 
+            <img src="https://github.com/andremelhor/teorema-das-coisas/blob/main/Imagens%2Flogo-teorema-das-coisas.png" alt="Logo" class="logo-img"> 
             Teorema das Coisas
         </div>
         
