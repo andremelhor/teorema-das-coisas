@@ -70,9 +70,9 @@ const menuHTML = `
                     </ul>
                    </li> 
                
-                <li><a href="index.html">Nosso Canal</a></li>                
-                <li><a href="index.html">Contato</a></li>    
-                <li><a href="index.html">Apoie Pix</a></li>
+                <li><a href="https://www.youtube.com/@TeoremadasCoisas/">Nosso Canal</a></li>                
+                <li><a href="https://www.xmath.com.br/2025/10/blog-post_0.html">Contato</a></li>    
+                <li><a href="https://www.xmath.com.br/p/apoie-o-canal-x-math-com-pix.html">Apoie Pix</a></li>
             </ul>
         </nav>
         <a href="#" class="btn-primary desktop-only">Inscreva-se</a>
