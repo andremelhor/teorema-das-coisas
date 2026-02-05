@@ -22,25 +22,25 @@ const menuHTML = `
                 <li class="dropdown">
                     <a href="#">Biologia<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                       <li><a href="#">1º Ano Biologia</a></li>
-                       <li><a href="#">2º Ano Biologia</a></li>
-                       <li><a href="#">3º Ano Biologia</a></li>
+                       <li><a href="/Biologia/Modulos-aula-1ano-biologia.html">1º Ano Biologia</a></li>
+                <!--   <li><a href="#">2º Ano Biologia</a></li>
+                       <li><a href="#">3º Ano Biologia</a></li> -->
                     </ul>
                 </li> 
                     <li class="dropdown">
                     <a href="#">Química<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                        <li><a href="#">1º Ano Química</a></li>
-                       <li><a href="#">2º Ano Química</a></li>
-                       <li><a href="#">3º Ano Química</a></li>
+                <!--   <li><a href="#">2º Ano Química</a></li>
+                        <li><a href="#">3º Ano Química</a></li> -->
                     </ul>
                 </li> 
                     <li class="dropdown">
                     <a href="#">Física<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                        <li><a href="#">1º Ano Física</a></li>
-                       <li><a href="#">2º Ano Física</a></li>
-                       <li><a href="#">3º Ano Física</a></li>
+                <!--   <li><a href="#">2º Ano Física</a></li>
+                       <li><a href="#">3º Ano Física</a></li> -->
                     </ul>
                 </li> 
                 </li> 
@@ -52,26 +52,24 @@ const menuHTML = `
                                <a href="#">Ensino Fundamental<i class="fa-solid fa-chevron-right"></i></a>                        
                                  <ul class="submenu">
                                     <li><a href="#">6º Ano</a></li>
-                                    <li><a href="#">7º Ano</a></li>
+                            <!--       <li><a href="#">7º Ano</a></li>
                                     <li><a href="#">8º Ano</a></li>
-                                    <li><a href="#">9º Ano</a></li>
+                                    <li><a href="#">9º Ano</a></li> -->
                                  </ul>
                             </li>
-                        <li class="has-submenu">                           
-                            <a href="#">Ensino Médio<i class="fa-solid fa-chevron-right"></i></a>                        
-                                <ul class="submenu">
-                                    <li><a href="#">1º Ano</a></li>
-                                    <li><a href="#">2º Ano</a></li>
-                                    <li><a href="#">3º Ano</a></li>
-                                </ul>
-                        </li>
+              <!--    <li class="has-submenu">                           
+                             <a href="#">Ensino Médio<i class="fa-solid fa-chevron-right"></i></a>                        
+                                 <ul class="submenu">
+                                     <li><a href="#">1º Ano</a></li>
+                                     <li><a href="#">2º Ano</a></li>
+                                     <li><a href="#">3º Ano</a></li>
+                                 </ul>
+                         </li> 
                         <li><a href="#">Ensino Superior</a></li>
-                        <li><a href="#">Concurso</a></li>
+                        <li><a href="#">Concurso</a></li> -->
                     </ul>
                    </li> 
-              <!--  <li><a href="index.html">Bioloiga</a></li>                
-                <li><a href="index.html">Química</a></li>    
-                <li><a href="index.html">Física</a></li>-->
+               
                 <li><a href="index.html">Nosso Canal</a></li>                
                 <li><a href="index.html">Contato</a></li>    
                 <li><a href="index.html">Apoie Pix</a></li>

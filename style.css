@@ -74,29 +74,34 @@ header {
     nav ul li a { color: var(--text-gray); font-size: 0.85rem; font-weight: 500; padding: 10px 0; }
     nav ul li a:hover { color: white; }
 
+    /* Estilos compartilhados (Borda azul e sombra corrigidas aqui) */
     .dropdown-menu, .submenu {
         display: none;
         position: absolute;
         background: white;
-        min-width: 200px;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         border-radius: 8px;
         padding: 5px 0;
         border-top: 3px solid var(--accent-blue);
     }
 
+    /* Regra Específica: Menu Principal (Ex: Ensino Fundamental) */
     .dropdown-menu { 
+        min-width: max-content; /* Adapta ao texto longo */
         top: 100%; 
         left: 50%; 
         transform: translateX(-50%); 
         margin-top: 5px;
     }
 
-    .submenu { 
+    /* Regra Específica: Submenu (Ex: 6º Ano) */
+    .submenu {
+        min-width: 120px; /* Tamanho fixo e compacto */
         top: 0; 
         left: 98%; 
     }
 
+    /* Comportamento de aparecer ao passar o mouse */
     .dropdown:hover > .dropdown-menu, 
     .has-submenu:hover > .submenu { 
         display: block !important; 
@@ -118,7 +123,7 @@ header {
 }
 
 /* ==========================================================
-   4. REGRAS PARA CELULAR (F12)
+   4. REGRAS PARA CELULAR
    ========================================================== */
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
@@ -154,7 +159,7 @@ header {
 }
 
 /* ==========================================================
-   5. CONTEÚDO   (HERO E CARDS) 
+   5. CONTEÚDO (HERO E CARDS) 
    ========================================================== */
 .hero { padding: 90px 0 60px; text-align: center; }
 h1 { font-family: 'Outfit'; font-size: 3.2rem; margin-top: 20px; color: var(--brand-blue); line-height: 1.2; }
@@ -202,80 +207,47 @@ h1 { font-family: 'Outfit'; font-size: 3.2rem; margin-top: 20px; color: var(--br
 
 /* ==========================================================
    6. SISTEMA DE CORES PARA CARDS DE MÓDULOS
-   Aqui mudamos APENAS a borda superior e a cor da seta
    ========================================================== */
 
-/* Card Verde (Ex: Citologia) */
-.card-verde {  border-top: 6px solid #22c55e !important; }
-.card-verde .link-arrow {     color: #22c55e !important; }
-/* Card Roxo (Ex: Bioquímica) */
-.card-roxo {      border-top: 6px solid #a855f7 !important; }
-.card-roxo .link-arrow {     color: #a855f7 !important; }
-/* Card Laranja (Ex: Genética) */
-.card-laranja {     border-top: 6px solid #f97316 !important; }
-.card-laranja .link-arrow {     color: #f97316 !important; }
-/* Card Amarelo */.card-amarelo {     border-top: 6px solid #eab308 !important; }
-.card-amarelo .link-arrow {     color: #eab308 !important; }
-/* Card Rosa */.card-rosa {     border-top: 6px solid #ec4899 !important; }
-.card-rosa .link-arrow {     color: #ec4899 !important; }
+/* Card Verde */
+.card-verde { border-top: 6px solid #22c55e !important; }
+.card-verde .link-arrow, .card-verde .link-arrow i { color: #22c55e !important; }
 
-/* ==========================================================
-   6. SISTEMA DE CORES PARA CARDS DE MÓDULOS
-   ========================================================== */
+/* Card Roxo */
+.card-roxo { border-top: 6px solid #a855f7 !important; }
+.card-roxo .link-arrow, .card-roxo .link-arrow i { color: #a855f7 !important; }
 
-/* Card Verde (Ex: Citologia) */
-
-.card-verde .link-arrow, .card-verde .link-arrow i { 
-    color: #22c55e !important; 
-}
-
-/* Card Roxo (Ex: Bioquímica) */
-.card-roxo { 
-    border-top: 6px solid #a855f7 !important; 
-}
-.card-roxo .link-arrow, .card-roxo .link-arrow i { 
-    color: #a855f7 !important; 
-}
-
-/* Card Laranja (Ex: Genética) */
-.card-laranja { 
-    border-top: 6px solid #f97316 !important; 
-}
-.card-laranja .link-arrow, .card-laranja .link-arrow i { 
-    color: #f97316 !important; 
-}
+/* Card Laranja */
+.card-laranja { border-top: 6px solid #f97316 !important; }
+.card-laranja .link-arrow, .card-laranja .link-arrow i { color: #f97316 !important; }
 
 /* Card Amarelo */
-.card-amarelo { 
-    border-top: 6px solid #eab308 !important; 
-}
-.card-amarelo .link-arrow, .card-amarelo .link-arrow i { 
-    color: #eab308 !important; 
-}
+.card-amarelo { border-top: 6px solid #eab308 !important; }
+.card-amarelo .link-arrow, .card-amarelo .link-arrow i { color: #eab308 !important; }
 
 /* Card Rosa */
-.card-rosa { 
-    border-top: 6px solid #ec4899 !important; 
-}
-.card-rosa .link-arrow, .card-rosa .link-arrow i { 
-    color: #ec4899 !important; 
-}
+.card-rosa { border-top: 6px solid #ec4899 !important; }
+.card-rosa .link-arrow, .card-rosa .link-arrow i { color: #ec4899 !important; }
 
+/* Card Preto */
+.card-preto { border-top: 6px solid #000000 !important; }
+.card-preto .link-arrow, .card-preto .link-arrow i { color: #000000 !important; }
 
 /* ==========================================================
-   PÁGINA DE VIDEOAULA (ESTILO PLAYLIST)
+   7. PÁGINA DE VIDEOAULA (ESTILO PLAYLIST)
    ========================================================== */
 .container-aula { margin-top: 100px; padding: 20px; max-width: 1400px; margin-inline: auto; }
 
 .aula-layout { display: flex; gap: 20px; }
 
-.video-main { flex: 3; } /* O vídeo ocupa 3 partes */
+.video-main { flex: 3; }
 .playlist { flex: 1; background: #1e293b; border-radius: 12px; height: fit-content; color: white; }
 
-/* Responsivo para celular */
+/* Responsivo para celular na aula */
 @media (max-width: 992px) {
     .aula-layout { flex-direction: column; }
 }
+
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background: #000; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
