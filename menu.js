@@ -17,7 +17,7 @@ const menuHTML = `
 
         <nav id="nav-menu">
             <ul>
-                <li><a href="/index.html">Início</a></li>
+                <li><a href="../index.html">Início</a></li>
           
                 <li class="dropdown">
                     <a href="#">Biologia<i class="fa-solid fa-chevron-down"></i></a>
