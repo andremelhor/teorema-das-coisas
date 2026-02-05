@@ -65,7 +65,7 @@ const menuHTML = `
             <li><a href="https://www.xmath.com.br/p/apoie-o-canal-x-math-com-pix.html" target="_blank">Apoie Pix</a></li>
         </ul>
     </nav>
-    <a href="#" class="btn-primary desktop-only">Inscreva-se</a>
+    <a href="https://www.youtube.com/@TeoremadasCoisas?sub_confirmation=1" class="btn-primary desktop-only">Inscreva-se</a>
 </div>
 `;
 
