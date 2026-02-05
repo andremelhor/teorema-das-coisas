@@ -22,7 +22,7 @@ const menuHTML = `
                 <li class="dropdown">
                     <a href="#">Biologia<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                       <li><a href="Biologia/Modulos-aula-1ano-biologia.html">1º Ano Biologia</a></li>
+                       <li><a href="../../Modulos-aula-1ano-biologia.html">1º Ano Biologia</a></li>
                 <!--   <li><a href="#">2º Ano Biologia</a></li>
                        <li><a href="#">3º Ano Biologia</a></li> -->
                     </ul>
