@@ -7,7 +7,7 @@ const menuHTML = `
 
 <div class="container nav-container">
         <div class="logo">
-            <img src="../Imagens/logo-teorema-das-coisas.png" alt="Logo" class="logo-img"> 
+            <img src="/teorema-das-coisas/Imagens/logo-teorema-das-coisas.png" alt="Logo" class="logo-img"> 
             Teorema das Coisas
         </div>
         
@@ -17,7 +17,7 @@ const menuHTML = `
 
         <nav id="nav-menu">
             <ul>
-                <li><a href="../index.html">Início</a></li>
+                <li><a href="/teorema-das-coisas/index.html">Início</a></li>
           
                 <li class="dropdown">
                     <a href="#">Biologia<i class="fa-solid fa-chevron-down"></i></a>
