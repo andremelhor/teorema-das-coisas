@@ -11,168 +11,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* O seu CSS original permanece igual aqui... */
         :root {
             --video-bg: #0f172a;
             --sidebar-bg: #1e293b;
             --accent-green: #22c55e;
             --text-white: #ffffff;
         }
-
         body { background-color: var(--video-bg) !important; color: white; }
-
-        .course-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 80px;
-            min-height: calc(100vh - 80px);
-        }
-
-        .video-section { 
-            flex: 3; 
-            padding: 30px; 
-            min-width: 65%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* BOTÃO VOLTAR */
-        .btn-voltar {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .btn-voltar:hover {
-            color: var(--accent-green);
-        }
-        
-        .video-player-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #000;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        
-        .video-player-container iframe {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: none;
-        }
-
-        .video-footer {
-            margin-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 20px;
-            gap: 15px;
-        }
-
-        .video-title {
-            font-family: 'Outfit';
-            font-size: 1.6rem;
-            color: var(--text-white);
-            margin: 0;
-        }
-
-        .btn-complete {
-            background: transparent;
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-
-        .btn-complete.done {
-            background: var(--accent-green);
-            color: #0f172a;
-        }
-
-        .sidebar {
-            flex: 1;
-            min-width: 350px;
-            background: var(--sidebar-bg);
-            border-left: 1px solid #334155;
-            max-height: calc(100vh - 80px);
-            overflow-y: auto;
-        }
-        
-        .sidebar-title {
-            padding: 25px;
-            border-bottom: 1px solid #334155;
-            font-family: 'Outfit';
-        }
-
-        .lesson-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .lesson-link {
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-            border-bottom: 1px solid #334155;
-            transition: 0.2s;
-        }
-        
+        .course-container { display: flex; flex-wrap: wrap; margin-top: 80px; min-height: calc(100vh - 80px); }
+        .video-section { flex: 3; padding: 30px; min-width: 65%; max-width: 900px; margin: 0 auto; }
+        .btn-voltar { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: #cbd5e1; text-decoration: none; font-weight: 600; transition: 0.2s; }
+        .btn-voltar:hover { color: var(--accent-green); }
+        .video-player-container { position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .video-player-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-footer { margin-top: 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 20px; gap: 15px; }
+        .video-title { font-family: 'Outfit'; font-size: 1.6rem; color: var(--text-white); margin: 0; }
+        .btn-complete { background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s; white-space: nowrap; }
+        .btn-complete.done { background: var(--accent-green); color: #0f172a; }
+        .sidebar { flex: 1; min-width: 350px; background: var(--sidebar-bg); border-left: 1px solid #334155; max-height: calc(100vh - 80px); overflow-y: auto; }
+        .sidebar-title { padding: 25px; border-bottom: 1px solid #334155; font-family: 'Outfit'; }
+        .lesson-list { list-style: none; padding: 0; margin: 0; }
+        .lesson-link { padding: 20px; display: flex; align-items: center; gap: 15px; cursor: pointer; border-bottom: 1px solid #334155; transition: 0.2s; }
         .lesson-link:hover { background: #334155; }
-        .lesson-link.active {
-            background: #0f172a;
-            border-left: 5px solid var(--accent-green);
-        }
-
-        .lesson-circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 2px solid #475569;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #94a3b8;
-            flex-shrink: 0;
-        }
-        
-        .lesson-link.finished .lesson-circle {
-            background: var(--accent-green);
-            border-color: var(--accent-green);
-            color: #0f172a;
-        }
-
-        .lesson-text {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 1024px) {
-            .course-container { flex-direction: column; }
-            .sidebar { max-height: none; width: 100%; border-left: none; }
-            .video-section { max-width: 100%; }
-        }
+        .lesson-link.active { background: #0f172a; border-left: 5px solid var(--accent-green); }
+        .lesson-circle { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #475569; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #94a3b8; flex-shrink: 0; }
+        .lesson-link.finished .lesson-circle { background: var(--accent-green); border-color: var(--accent-green); color: #0f172a; }
+        .lesson-text { color: #cbd5e1; font-size: 0.95rem; }
+        @media (max-width: 1024px) { .course-container { flex-direction: column; } .sidebar { max-height: none; width: 100%; border-left: none; } .video-section { max-width: 100%; } }
     </style>
 </head>
 <body class="tema-biologia">
@@ -182,8 +48,7 @@
 <main class="course-container"> 
     <section class="video-section">
 
-        <!-- LINK VOLTAR -->
-        <a href="/Biologia/Modulos-aula-1ano-biologia.html" class="btn-voltar">
+        <a href="../Modulos-aula-1ano-biologia.html" class="btn-voltar">
             <i class="fa-solid fa-arrow-left"></i> Voltar para os módulos
         </a>
 
@@ -200,7 +65,7 @@
         </div>
 
         <p style="margin-top: 20px; color: #94a3b8;">
-            Bem-vindo ao módulo sIntrodução a Biologia 1º Ano . Assista ao vídeo e utilize a lista lateral para navegar entre as lições.
+            Bem-vindo ao módulo Introdução a Biologia 1º Ano. Assista ao vídeo e utilize a lista lateral para navegar entre as lições.
         </p>
     </section>
 
@@ -210,9 +75,10 @@
     </aside>
 </main>
 
-<script src="/menu.js"></script>
+<script src="../../menu.js"></script>
 
 <script>
+    // O seu Script de aulas permanece igual...
     const lessons = [
         { id: "BIO1_01", title: "📌 🔬 DESCUBRA a Ciência que explica  e ESTUDA a VIDA ", ytId: "lZmkv1M5QtM" },
         { id: "BIO1_02", title: "📌 🔬 De onde vem a vida ABIOGENÊNESE vs BIOGÊNESE explicada", ytId: "BGKg45F0xlA" }
@@ -224,21 +90,13 @@
     function renderLessons() {
         const container = document.getElementById('lesson-list-container');
         container.innerHTML = "";
-        
         lessons.forEach((lesson, index) => {
             const isFinished = progress[lesson.id];
             const isActive = index === currentIdx;
-            
             const li = document.createElement('li');
             li.className = `lesson-link ${isActive ? 'active' : ''} ${isFinished ? 'finished' : ''}`;
             li.onclick = () => loadLesson(index);
-            
-            li.innerHTML = `
-                <div class="lesson-circle">
-                    ${isFinished ? '<i class="fa-solid fa-check"></i>' : index + 1}
-                </div>
-                <span class="lesson-text">${lesson.title}</span>
-            `;
+            li.innerHTML = `<div class="lesson-circle">${isFinished ? '<i class="fa-solid fa-check"></i>' : index + 1}</div><span class="lesson-text">${lesson.title}</span>`;
             container.appendChild(li);
         });
     }
@@ -246,11 +104,8 @@
     function loadLesson(index) {
         currentIdx = index;
         const lesson = lessons[index];
-        
-        document.getElementById('video-frame').src =
-            `https://www.youtube.com/embed/${lesson.ytId}?rel=0&autoplay=1`;
+        document.getElementById('video-frame').src = `https://www.youtube.com/embed/${lesson.ytId}?rel=0&autoplay=1`;
         document.getElementById('display-title').innerText = lesson.title;
-        
         updateButtonUI();
         renderLessons();
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -260,7 +115,6 @@
         const lessonId = lessons[currentIdx].id;
         progress[lessonId] = !progress[lessonId];
         localStorage.setItem('teorema_progresso', JSON.stringify(progress));
-        
         updateButtonUI();
         renderLessons();
     }
@@ -268,7 +122,6 @@
     function updateButtonUI() {
         const btn = document.getElementById('btn-status');
         const lessonId = lessons[currentIdx].id;
-        
         if (progress[lessonId]) {
             btn.classList.add('done');
             btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>Aula Concluída</span>`;
@@ -277,7 +130,6 @@
             btn.innerHTML = `<i class="fa-regular fa-circle-check"></i> <span>Marcar como Concluída</span>`;
         }
     }
-
     window.onload = () => loadLesson(0);
 </script>
 
