@@ -26,7 +26,6 @@
 // Uma pequena observação de "segurança":
 // A única coisa que você deve garantir quando mudar para o domínio próprio é que todos os seus arquivos (pastas Biologia, Imagens, etc.) continuem na raiz do repositório do GitHub. Se a estrutura de pastas não mudar, o código cuidará do resto.
 
-
 const isGithub = window.location.hostname.includes('github.io');
 const baseURL = isGithub ? '/teorema-das-coisas' : '';
 
