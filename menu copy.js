@@ -59,7 +59,23 @@ const menuHTML = `
                 <ul class="dropdown-menu">
                     <li><a href="${rootPath}Fisica/fisica-geral.html">1º Ano Física</a></li>
                 </ul>
+          
+                <li class="dropdown">
+                <a href="#">Matemática <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="has-submenu">                           
+                        <a href=""${rootPath}#">Ensino Fundamental <i class="fa-solid fa-chevron-right"></i></a>                        
+                        <ul class="submenu">
+                            <li><a href="https://www.xmath.com.br/p/pagina-6-ano-ensino-fundamental.html"  target="_blank">6º Ano</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li> 
+           
+            
+            
+            
+                </li> 
            
             <li><a href="https://www.youtube.com/@TeoremadasCoisas/" target="_blank">Nosso Canal</a></li>                
             <li><a href="https://www.xmath.com.br/p/apoie-o-canal-x-math-com-pix.html" target="_blank">Apoie Pix</a></li>
